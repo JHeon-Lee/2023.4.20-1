@@ -1,5 +1,5 @@
+#include "pch.h" // cPlayer.h보다 먼저 include되야한다.
 #include "cPlayer.h"
-#include "pch.h"
 
 cPlayer::cPlayer() // cPlayer.h 에서 cPlayer 지정하고 F12 누르면 정의로 넘어옴
 {
