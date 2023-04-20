@@ -3,6 +3,8 @@
 // 대기, 전투, 이동
 enum E_PSTATE { P_IDLE, P_FIGHT, P_WALK };
 
+enum E_ARMOR { A_EMPTY, A_LIGHT, A_MEDIUM, A_HEAVY };
+
 class cPlayer
 {
 private:
@@ -14,9 +16,11 @@ private:
 	int m_nCurrHp;	// 현재 체력
 	int m_nAtt;	// 공격력
 
+	E_ARMOR m_eArmor; // 현재 장착 방어구
+
 public:
-	cPlayer();
-	~cPlayer();
+	cPlayer(); // 생성자
+	~cPlayer(); // 파괴자
 	
 	// 인라인 함수 - 일반적인 호출과정을 거치지 않고 함수의 모든 코드를 호출된 자리에 바로 삽입
 	string GetName() { return m_strName; } // Getter : 클래스에서 멤버변수 데이터를 가져오는 함수
