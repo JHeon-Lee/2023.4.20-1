@@ -18,6 +18,8 @@ private:
 
 	E_ARMOR m_eArmor; // 현재 장착 방어구
 
+	E_PLACE m_eCurrPlace; // 현재 캐릭터의 장소
+
 public:
 	cPlayer(); // 생성자
 	~cPlayer(); // 파괴자
@@ -29,7 +31,14 @@ public:
 	int GetExp() { return m_nExp; }
 	int GetMaxHp() { return m_nMaxHp; }
 	int GetCurrHp() { return m_nCurrHp; }
-	int GetAtt() { return m_nAtt; }
+	void SetMaxHp() { m_nCurrHp = m_nMaxHp; }
+	int GetAttDamage() { return m_nAtt; }
+	int GetExDamage() { return rand() % 6; }
+	void TakeDamage(int damage) { m_nCurrHp -= damage; }
+
+	// 플레이스 겟터 셋터
+	E_PLACE GetPlace() { return m_eCurrPlace; }
+	void SetPlace(E_PLACE place) { m_eCurrPlace = place; }
 
 	void IncreaseExp(int exp);
 	void CalcMaxHp();
